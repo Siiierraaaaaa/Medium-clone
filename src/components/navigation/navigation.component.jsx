@@ -1,31 +1,48 @@
-import { useLocation } from "react-router";
-import { Home } from "../../pages/home.page";
-import { Library } from "../../pages/library.page";
-import { Profile } from "../../pages/profile.page";
-import { Stories } from "../../pages/stories.page";
-import { Stats } from "../../pages/stats.page";
-import { Following } from "../../pages/following.page";
+import { useLocation, Link } from "react-router-dom";
+import "./navigation.css";
 
 const navList = [
-    {link: '/', lable:Home},
-    {link: '/', lable:Library},
-    {link: '/', lable:Profile},
-    {link: '/', lable:Stories},
-    {link: '/', lable:Stats},
-    {link: '/', lable:Following},
-]
+    { link: '/', label: "Home" },
+    { link: '/library', label: "Library" },
+    { link: '/profile', label: "Profile" },
+    { link: '/stories', label: "Stories" },
+    { link: '/stats', label: "Stats" },
+    { link: '/following', label: "Following" },
+];
 
-const NavigationButton = ({link, label, isActive})=>{
-    return <a herf={link} style={{ textDecoration:'none', color: isActive ? 'white' : 'black'}}>{label}</a>
-}
+const NavigationButton = ({ link, label, isActive }) => {
+    return (
+        <Link
+            to={link}
+            style={{
+                textDecoration: 'none',
+                color: isActive ? 'white' : 'black'
+            }}
+        >
+            {label}
+        </Link>
+    );
+};
 
-export const Navigation =()=>{
-    const {pathname} = useLocation();
-    return navList.map((item)=>
-        <NavigationButton
-        key={item.lable}
-        link={item.link}
-        label={item.lable}
-        isActive={pathname === item.link}/>
-)
-}
+export const Navigation = () => {
+    const { pathname } = useLocation();
+
+    return (
+<nav className="nav-container">
+            <div className="nav-logo">Medium</div>
+
+            <div className="nav-links">
+                {navList.map((item) => (
+                    <NavigationButton
+                        key={item.label}
+                        link={item.link}
+                        label={item.label}
+                        isActive={pathname === item.link}
+                    />
+                ))}
+                <button className="nav-write">Write</button>
+                <button className="nav-signin">Sign in</button>
+            </div>
+        </nav>
+    );
+};
