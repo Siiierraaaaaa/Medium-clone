@@ -1,0 +1,29 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: white;
+    padding: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 16px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    margin-top: 20px;
+    gap: 16px;
+}

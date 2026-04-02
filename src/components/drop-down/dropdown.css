@@ -1,0 +1,55 @@
+.dropdown-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 220px;
+  background: white;
+  border-radius: 10px;
+  padding: 8px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
+}
+
+/* sections */
+.dropdown-top,
+.dropdown-middle {
+  padding: 5px 0;
+}
+
+/* items */
+.dropdown-menu p,
+.dropdown-menu a,
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  margin: 0;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* hover */
+.dropdown-menu p:hover,
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background: #f5f5f5;
+}
+
+/* username */
+.username {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+/* divider */
+.dropdown-menu hr {
+  margin: 8px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}

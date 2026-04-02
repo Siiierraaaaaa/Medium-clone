@@ -1,40 +1,81 @@
-nav-container {
+.navigation {
+    width: 100%;
+    color: #000;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.top-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 80px;
-    border-bottom: 1px solid #e6e6e6;
-    background-color: white;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 15px 40px;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 24px;
+/* LEFT */
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
-.nav-logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #000;
-  cursor: pointer;
+
+/* RIGHT */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
-.nav-write:hover {
-  color: #000;
+
+/* LOGO */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
-.nav-write {
-    margin-left: 20px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid #000;
-  background: #f2f2f2;
-  color: #000;
+
+/* HAMBURGER */
+.hamburger-menu {
+    font-size: 22px;
+    cursor: pointer;
 }
-.nav-signin {
- padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid #000;
-  background: white;
-   color: #000;
+
+/* SEARCH */
+.icon-input {
+    display: flex;
+    align-items: center;
+    background: #f1f1f1;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #333;
+}
+
+.icon-input input {
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 6px;
+}
+
+.search-wrapper {
+    margin-right: auto;
+}
+
+/* PROFILE */
+.profile-section {
+    position: relative;
+}
+
+.profile-icon img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* BUTTON */
+.get-started {
+    background: black;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
 }
