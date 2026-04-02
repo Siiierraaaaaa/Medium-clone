@@ -1,16 +1,28 @@
 import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
-import { IoHomeOutline } from "react-icons/io5";
+import { IoHomeOutline, IoStatsChartOutline } from "react-icons/io5";
 import { PiBookmarksSimpleThin } from "react-icons/pi";
 import { HiOutlineNewspaper } from "react-icons/hi2";
 import { BsPerson } from "react-icons/bs";
-import { IoStatsChartOutline } from "react-icons/io5";
 import { SlUserFollowing } from "react-icons/sl";
 import "./sidebar.css";
 
 export const Sidebar = ({ showSidebar, setShowSidebar }) => {
 
     if (!showSidebar) return null;
+
+
+    const navLinks = [
+        { label: "Home", path: "/", icon: <IoHomeOutline /> },
+        { label: "Library", path: "/library", icon: <PiBookmarksSimpleThin /> },
+        { label: "Profile", path: "/profile", icon: <BsPerson /> },
+        { label: "Stories", path: "/stories", icon: <HiOutlineNewspaper /> },
+        { label: "Stats", path: "/stats", icon: <IoStatsChartOutline /> },
+    ];
+
+    const bottomLinks = [
+        { label: "Following", path: "/following", icon: <SlUserFollowing /> },
+    ];
 
     return (
         <>
@@ -19,7 +31,6 @@ export const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 onClick={() => setShowSidebar(false)}
             />
 
-            {/* SIDEBAR */}
             <div className="sidebar">
 
                 <div className="left-section">
@@ -28,39 +39,27 @@ export const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 </div>
 
                 <div className="sidebar-links">
-                    <Link to="/" onClick={() => setShowSidebar(false)}>
-                        <IoHomeOutline />
-                        Home
-                    </Link>
-
-                    <Link to="/library" onClick={() => setShowSidebar(false)}>
-                        <PiBookmarksSimpleThin />
-                        Library
-                    </Link>
-
-                    <Link to="/profile" onClick={() => setShowSidebar(false)}>
-                        <BsPerson />
-                        Profile
-                    </Link>
-
-                    <Link to="/stories" onClick={() => setShowSidebar(false)}>
-                        <HiOutlineNewspaper />
-                        Stories
-                    </Link>
-
-                    <Link to="/stats" onClick={() => setShowSidebar(false)}>
-                        <IoStatsChartOutline />
-                        Stats
-                    </Link>
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.path}
+                            to={link.path}
+                            onClick={() => setShowSidebar(false)}
+                        >
+                            {link.icon}
+                            <span>{link.label}</span>
+                        </Link>
+                    ))}
                 </div>
 
                 <div style={{ flex: 1 }} />
 
                 <div className="sidebar-bottom">
-                    <Link to="/following">
-                        <SlUserFollowing />
-                        Following
-                    </Link>
+                    {bottomLinks.map((link) => (
+                        <Link key={link.path} to={link.path}>
+                            {link.icon}
+                            <span>{link.label}</span>
+                        </Link>
+                    ))}
 
                     <p>UX Collective</p>
                     <p>uxplanet.org</p>
