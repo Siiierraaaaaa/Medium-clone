@@ -1,0 +1,21 @@
+/* MAIN LAYOUT */
+.page-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr 250px;
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+/* SIDEBARS */
+.left-sidebar {
+  border-right: 1px solid #eee;
+}
+
+.right-sidebar {
+  border-left: 1px solid #eee;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  max-width: 700px;
+}
